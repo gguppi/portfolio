@@ -1,0 +1,80 @@
+.footer {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    padding: 50px 0 20px;
+    transition: background 0.3s, color 0.3s;
+    height: 50vh;
+}
+
+.footer-container {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Brand text */
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.footer-sub {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 320px;
+}
+
+/* Social icons */
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a.btn-social {
+    font-size: 1.5rem;
+}
+
+
+/* Animation */
+.footer-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bottom line */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+    padding-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-sub {
+        max-width: 90%;
+    }
+
+    .footer-animation dotlottie-wc {
+        width: 240px !important;
+        height: 240px !important;
+    }
+}

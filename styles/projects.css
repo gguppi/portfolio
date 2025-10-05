@@ -1,0 +1,170 @@
+/* Section wrapper */
+.projects {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 80px 20px;
+    transition: background 0.4s, color 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects::before {
+    content: "+";
+    font-size: 24px;
+    color: #868686;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+.projects::after {
+    content: "+";
+    font-size: 24px;
+    color: #868686;
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+}
+
+.projects-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+
+}
+
+.projects-heading span.grad {
+    background: var(--grad-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Project Card */
+.projects-container {
+    /* FIX: Use Flexbox to center the content within the projects section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* FIX: Remove fixed width and set a proper max-width for centering */
+    width: 100%;
+    max-width: 1200px;
+    /* Increased max-width for a wider, more modern look */
+
+    /* Nest the two cards using CSS Grid within this centered container */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    /* Center the container horizontally */
+    margin: 0 auto;
+}
+
+/* === INDIVIDUAL PROJECT CARD === */
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 20px 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 230px;
+    /* smaller and tighter */
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === CARD CONTENT === */
+.project-content {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+.project-link:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.project-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.85;
+    margin-top: 10px;
+}
+
+.tech-uses {
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.skill-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    color: #777;
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.15);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        /* Using a smaller percentage width for mobile screens */
+        width: 85vw;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 18px;
+        min-height: 200px;
+    }
+
+    .skills-track {
+        animation-duration: 10s;
+    }
+}
