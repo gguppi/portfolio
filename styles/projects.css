@@ -2,7 +2,7 @@
 .projects {
     background: var(--bg-color);
     color: var(--text-color);
-    padding: 80px 20px;
+    padding: 80px 40px;
     transition: background 0.4s, color 0.4s;
     position: relative;
     overflow: hidden;
@@ -22,8 +22,8 @@
     font-size: 24px;
     color: #868686;
     position: absolute;
-    bottom: 30px;
-    right: 60px;
+    bottom: 20px;
+    right: 50px;
 }
 
 .projects-heading {
@@ -151,20 +151,99 @@
 }
 
 /* === RESPONSIVE === */
-@media (max-width: 900px) {
+/* Tablet Screens (<= 1024px) */
+@media (max-width: 1024px) {
+    .projects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .projects-heading {
+        font-size: 2.5rem;
+    }
+
     .projects-container {
         grid-template-columns: 1fr;
-        /* Using a smaller percentage width for mobile screens */
-        width: 85vw;
-        gap: 20px;
+        max-width: 90%;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card {
+        max-width: 600px;
+        min-height: 220px;
+    }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+    .projects {
+        padding: 60px 15px;
+    }
+
+    .projects-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
     }
 
     .project-card {
         padding: 18px;
-        min-height: 200px;
+        border-radius: 12px;
+        width: 100%;
     }
 
-    .skills-track {
-        animation-duration: 10s;
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-link {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+
+    .project-desc {
+        font-size: 0.9rem;
+    }
+
+    .tech-uses {
+        font-size: small;
+        gap: 35px;
+    }
+
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Extra Small Screens (<= 480px) */
+@media (max-width: 480px) {
+    .projects-heading {
+        font-size: 1.8rem;
+    }
+
+    .project-card {
+        padding: 16px;
+        min-height: auto;
+    }
+
+    .project-title {
+        font-size: 1rem;
+    }
+
+    .project-desc {
+        font-size: 0.85rem;
+    }
+
+    .tech-uses {
+        font-size:x-small;
+        gap: 30px;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
     }
 }

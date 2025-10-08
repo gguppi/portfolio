@@ -1,5 +1,6 @@
 /* --- Cards --- */
 
+
 .skills-heading {
     text-align: center;
     font-size: 2.5rem;
@@ -110,6 +111,16 @@
     opacity: 0.9;
 }
 
+.logo-card i {
+    font-size: 3rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.logo-item:hover i {
+    transform: scale(1.1);
+}
+
+
 .cards::before {
     content: "+";
     font-size: 24px;
@@ -124,18 +135,10 @@
     font-size: 24px;
     color: #868686;
     position: absolute;
-    bottom: 30px;
-    right: 60px;
+    bottom: 20px;
+    right: 50px;
 }
 
-.logo-card i {
-    font-size: 3rem;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.logo-item:hover i {
-    transform: scale(1.1);
-}
 
 /* 🎨 Individual Icon Colors */
 i.fa-node-js {
@@ -227,4 +230,95 @@ i.fa-ubuntu {
 /* Linux black */
 i.fa-network-wired {
     color: #9c27b0;
+}
+
+
+
+
+/* --- Skills Section Responsive --- */
+
+/* Medium devices: tablets, smaller desktops */
+@media (max-width: 1100px) {
+    .cards {
+        padding: 60px 15px;
+    }
+
+    .carousel-track-wrapper {
+        max-width: 95%;
+    }
+
+    .skill-row {
+        gap: 20px;
+    }
+
+    .logo-card i {
+        font-size: 2.5rem;
+    }
+
+    .desc-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .desc-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Small devices: phones, <768px */
+@media (max-width: 768px) {
+    .skill-row {
+        display: grid;
+        grid-template-columns: 1fr; /* stack logo + description vertically */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .logo-card {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo-item i {
+        font-size: 2rem;
+    }
+
+    .logo-item span {
+        font-size: 0.85rem;
+    }
+
+    .desc-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .desc-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* Extra small devices: very small phones <480px */
+@media (max-width: 480px) {
+    .cards {
+        padding: 40px 10px;
+    }
+
+    .logo-card i {
+        font-size: 1.8rem;
+    }
+
+    .logo-item span {
+        font-size: 0.8rem;
+    }
+
+    .desc-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .desc-card p {
+        font-size: 0.9rem;
+    }
+
+    .skill-row {
+        gap: 20px;
+    }
 }

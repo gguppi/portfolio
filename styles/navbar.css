@@ -163,11 +163,18 @@
 }
 
 
-
-/* Hide links on small screens */
+/* --- Responsive Navbar Fix --- */
 @media (max-width: 1100px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
     .burger {
         display: flex;
+        margin-left: auto; /* keep burger on far right */
     }
 
     .nav-links {
@@ -188,6 +195,8 @@
 
     .nav-links.show {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-links a {
@@ -196,7 +205,7 @@
     }
 
     .mobile-theme-btn {
-        display: flex;       /* inherits .theme-btn styles */
+        display: flex;
         justify-content: center;
         align-items: center;
         width: 36px;
@@ -204,23 +213,33 @@
     }
 
     .nav-right {
-        display: none;
-        /* hide buttons on mobile, theme toggle moved inside menu */
+        display: none; /* hide buttons on mobile */
     }
 
-    /* Add theme button inside the menu for mobile */
-    .nav-links::after {
-        content: "";
+    /* fix logo wrapping */
+    .logo {
+        flex-shrink: 0;
+        white-space: nowrap;
     }
 }
 
-@media (min-width: 100px) and (max-width: 800px) { 
+/* ultra-small devices (like phones under 800px) */
+@media (max-width: 800px) {
     .navbar {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .nav-container {
+        padding: 12px 16px;
+        flex-direction: row;
+    }
+
+    .nav-links {
+        right: 10px;
     }
 }
+
 
 /* Optional: smooth transitions */
 .nav-links a,

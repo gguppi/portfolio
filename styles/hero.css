@@ -24,8 +24,8 @@
     font-size: 24px;
     color: #868686;
     position: absolute;
-    bottom: 30px;
-    right: 60px;
+    bottom: 20px;
+    right: 50px;
 }
 
 .hero .container {
@@ -109,7 +109,7 @@
 
 .btn-social {
     display: inline-block;
-    /* padding: 0.6rem 1.2rem; */
+    padding: 0.6rem 1.2rem;
     padding: 0.3rem 0.6rem;
     border-radius: 10px;
     text-decoration: none;
@@ -148,6 +148,15 @@
     background: #000;
 }
 
+.btn-social.leetcode {
+    background: #24292e;
+    color: #fff;
+}
+
+.btn-social.leetcode:hover {
+    background: #000;
+}
+
 .btn-social.mail {
     background: #24292e;
     color: #fff;
@@ -168,19 +177,74 @@
     color: #fff;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) {
+/* --- Hero Section Responsive Fix --- */
+@media (max-width: 1100px) {
+    .hero {
+        padding: 60px 15px;
+    }
+
     .hero-grid {
-        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .work-animation {
+        max-width: 350px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 50px 35px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr; /* stack left + right vertically */
+        justify-items: center;
         text-align: center;
     }
 
+    .hero-left,
     .hero-right {
-        text-align: center;
+        width: calc(100% -50px);
     }
 
     .work-animation {
         max-width: 300px;
-        height: 300px;
+        height: auto;
+    }
+
+    .intro-title {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .social-buttons {
+        justify-content: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-animation {
+        max-width: 300px;
+        height: auto;
+    }
+
+    .intro-title {
+        font-size: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+    }
+
+    .social-buttons {
+        gap: 0.5rem;
     }
 }
